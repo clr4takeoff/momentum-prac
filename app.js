@@ -1,6 +1,17 @@
-const title = document.getElementById("title");
+const title = document.querySelector(".hello:first-child h1")
 
-title.innerText = "Got you!";
+function handleTitleClick() {
+    title.style.color="blue";
+}
 
-console.log(title.id);
-console.log(title.className);
+function handleMouseEnter() {
+    title.innerText = "Mouse is here!";
+}
+
+function handleMouseLeave() {
+    title.innerText= "Mouse is gone!"
+}
+
+title.addEventListener("click", handleTitleClick);
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
