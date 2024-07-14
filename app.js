@@ -1,17 +1,15 @@
 const loginForm=document.querySelector("#login-form");
 const loginInput=document.querySelector("#login-form input");
+const greeting= document.querySelector("#greeting");
+const  HIDDEN_CLASSNAME = "hidden";
 
-const link=document.querySelector("a");
-
-function onLoginSubmit() {
-    console.log(loginInput.value);
-}
-
-function handleLinkClick(event) {
+function onLoginSubmit(event) {
     event.preventDefault();
-    console.dir(event);
+    loginForm.classList.add("hidden");
+    const username=loginInput.value;
+    // 밑에 따옴표같은거 ' 이게 아니고 option+₩ 눌러야함... (backtick 기호)
+    greeting.innerText= `Hello ${username}`;
+    greeting.classList.remove("hidden");
 }
 
-// addEventListener 안에 있는 함수는 직접 실행하지 않는다.
 loginForm.addEventListener("submit",onLoginSubmit);
-link.addEventListener("click", handleLinkClick);
