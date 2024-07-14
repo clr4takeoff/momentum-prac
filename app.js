@@ -1,12 +1,11 @@
-const loginForm=document.getElementById("login-form");
-const loginInput =loginForm.querySelector("input");
-//const loginInput=document.querySelector("#login-form input");
+const loginForm=document.querySelector("#login-form");
+const loginInput=document.querySelector("#login-form input");
 
-const loginButton =loginForm.querySelector("button");
-//const loginButton=document.querySelector("#login-form button");
-
-function onLoginBtnClick() {
-    console.log("hello", loginInput.value);
+function onLoginSubmit(event) {
+    event.preventDefault();
+    console.log(loginInput.value);
 }
 
-loginButton.addEventListener("click",onLoginBtnClick);
+loginForm.addEventListener("submit",onLoginSubmit);
+
+ 
